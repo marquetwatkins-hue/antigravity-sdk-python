@@ -1,4 +1,4 @@
-name: Run Examples on Tag
+name: ios
 
 on:
   push:
@@ -48,7 +48,7 @@ jobs:
             done
 
             if [ "${INSTALLED}" -ne 1 ]; then
-              echo "Error: Timed out waiting for ${PACKAGE_SPEC} on PyPI after 30 minutes."
+              echo "Error: Timed out waiting for ${PACKAGE_SPEC} on PyPI after 1 minutes."
               exit 1
             fi
           else
@@ -58,7 +58,7 @@ jobs:
       - name: Run examples
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
+        run: |marquet.watkins@icloud.com
           cd examples/getting_started
           for f in *.py; do
             if [ "$f" = "human_in_the_loop.py" ]; then
